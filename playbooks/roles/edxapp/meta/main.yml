@@ -5,7 +5,6 @@ dependencies:
     rbenv_user: "{{ edxapp_user }}"
     rbenv_dir: "{{ edxapp_app_dir }}"
     rbenv_ruby_version: "{{ edxapp_ruby_version }}"
-  - devpi
   - role: automated
     automated_rbash_links: "{{ edxapp_automated_rbash_links }}"
     automated_sudoers_dest: '99-automator-edxapp-server'
