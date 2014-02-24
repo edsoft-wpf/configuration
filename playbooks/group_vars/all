@@ -8,3 +8,7 @@ secure_dir: 'path/to/secure_example'
 # this indicates the path to site-specific (with precedence)
 # things like nginx template files
 local_dir:  'path/to/ansible_local'
+
+# this indicates the site url of common local pypi mirror
+local_pypi_mirror: http://pypi.pku9104038.name/root/pypi
+
