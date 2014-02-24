@@ -41,7 +41,10 @@
 
 # Install the python pre requirements into {{ ora_venv_dir }}
 - name: install python pre-requirements
-  pip: requirements="{{ ora_pre_requirements_file }}" virtualenv="{{ ora_venv_dir }}" state=present
+  pip: >
+    requirements="{{ ora_pre_requirements_file }}"
+    virtualenv="{{ ora_venv_dir }}" state=present
+    extra_args="-i {{ local_pypi_mirror }}"
   sudo_user: "{{ ora_user }}"
   notify:
     - restart ora
@@ -49,7 +52,10 @@
 
 # Install the python post requirements into {{ ora_venv_dir }}
 - name: install python post-requirements
-  pip: requirements="{{ ora_post_requirements_file }}" virtualenv="{{ ora_venv_dir }}" state=present
+  pip: >
+    requirements="{{ ora_post_requirements_file }}"
+    virtualenv="{{ ora_venv_dir }}" state=present
+    extra_args="-i {{ local_pypi_mirror }}"
   sudo_user: "{{ ora_user }}"
   notify:
     - restart ora
