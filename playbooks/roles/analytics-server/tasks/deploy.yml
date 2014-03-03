@@ -68,9 +68,10 @@
   - update
 
 - name: install application requirements
-  pip:
+  pip: >
     requirements={{ as_requirements_file }}
     virtualenv={{ as_venv_dir }} state=present
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   sudo: true
   sudo_user: "{{ as_user }}"
   notify: start the analytics service

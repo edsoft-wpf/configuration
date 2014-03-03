@@ -9,6 +9,9 @@ secure_dir: 'path/to/secure_example'
 # things like nginx template files
 local_dir:  'path/to/ansible_local'
 
-# this indicates the site url of common local pypi mirror
-local_pypi_mirror: http://pypi.pku9104038.name/root/pypi
+# this indicates the site url of local pypi mirror for pip install
+local_pypi_mirror: http://10.0.9.250/root/pypi
+
+# this indicates the site url of extra pypi mirror for pip install
+extra_pypi_mirror: http://pypi.pku9104038.name/root/pypi
 

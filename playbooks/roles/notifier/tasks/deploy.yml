@@ -15,9 +15,10 @@
     path={{ NOTIFIER_SOURCE_REPO }} mode=2775 state=directory
 
 - name: install application requirements
-  pip:
+  pip: >
     requirements="{{ NOTIFIER_REQUIREMENTS_FILE }}"
     virtualenv="{{ NOTIFIER_VENV_DIR }}" state=present
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   sudo: true
   sudo_user: "{{ NOTIFIER_USER }}"
   notify:

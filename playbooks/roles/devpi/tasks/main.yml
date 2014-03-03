@@ -63,6 +63,7 @@
     name={{ item }}
     state=present
     virtualenv={{ devpi_venv_dir }}
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   sudo_user: "{{ devpi_user }}"
   with_items: devpi_pip_pkgs
   notify: restart devpi

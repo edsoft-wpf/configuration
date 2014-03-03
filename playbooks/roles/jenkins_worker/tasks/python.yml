@@ -2,7 +2,9 @@
 
 # Install scripts requiring a GitHub OAuth token
 - name: Install requests Python library
-  pip: name=requests state=present
+  pip: >
+    name=requests state=present
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
 
 - fail: OAuth token not defined
   when: github_oauth_token is not defined
@@ -23,7 +25,9 @@
   sudo_user: "{{ jenkins_user }}"
 
 - name: Install wheel
-  pip: name=wheel virtualenv={{ jenkins_venv }} virtualenv_command=/usr/local/bin/virtualenv
+  pip: >
+    name=wheel virtualenv={{ jenkins_venv }} virtualenv_command=/usr/local/bin/virtualenv
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   sudo_user: "{{ jenkins_user }}"
 
 - name: Create wheelhouse dir

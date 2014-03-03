@@ -44,7 +44,7 @@
   pip: >
     requirements="{{ ora_pre_requirements_file }}"
     virtualenv="{{ ora_venv_dir }}" state=present
-    extra_args="-i {{ local_pypi_mirror }}"
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   sudo_user: "{{ ora_user }}"
   notify:
     - restart ora
@@ -55,7 +55,7 @@
   pip: >
     requirements="{{ ora_post_requirements_file }}"
     virtualenv="{{ ora_venv_dir }}" state=present
-    extra_args="-i {{ local_pypi_mirror }}"
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   sudo_user: "{{ ora_user }}"
   notify:
     - restart ora

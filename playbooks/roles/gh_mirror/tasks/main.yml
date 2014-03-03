@@ -29,7 +29,9 @@
 
 ---
 - name: install pip packages
-  pip: name={{ item }} state=present
+  pip: >
+    name={{ item }} state=present
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   with_items: gh_mirror_pip_pkgs
 
 - name: install debian packages

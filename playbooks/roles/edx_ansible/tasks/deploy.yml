@@ -7,7 +7,7 @@
   pip: >
     requirements="{{ edx_ansible_requirements_file }}"
     virtualenv="{{ edx_ansible_venv_dir }}" state=present
-    extra_args="-i {{ local_pypi_mirror }}"
+    extra_args="-i {{ local_pypi_mirror }} --extra-index-url {{ extra_pypi_mirror }}"
   sudo_user: "{{ edx_ansible_user }}"
 
 - name: create update script
