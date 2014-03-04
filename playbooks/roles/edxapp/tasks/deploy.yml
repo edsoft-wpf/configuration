@@ -151,7 +151,7 @@
   # installs everything into that virtual environment.
   shell: >
     {{ edxapp_venv_dir }}/bin/pip install
-    -i {{ edxapp_pypi_local_mirror }} --extra_index-url {{ extra_pypi_mirror }}
+    -i {{ edxapp_pypi_local_mirror }} --extra-index-url {{ extra_pypi_mirror }}
     --exists-action w --use-mirrors -r {{ item }}
     chdir={{ edxapp_code_dir }}
   with_items:
