@@ -93,13 +93,13 @@ EDXAPP_CMS_SSL_NGINX_PORT: 48010
 EDXAPP_LANG: 'en_US.UTF-8'
 EDXAPP_TIME_ZONE: 'America/New_York'
 
-EDXAPP_TECH_SUPPORT_EMAIL: 'technical@example.com'
-EDXAPP_CONTACT_EMAIL: 'info@example.com'
-EDXAPP_BUGS_EMAIL: 'bugs@example.com'
-EDXAPP_DEFAULT_FROM_EMAIL: 'registration@example.com'
-EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'feedback@example.com'
-EDXAPP_DEFAULT_SERVER_EMAIL: 'devops@example.com'
-EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@example.com'
+EDXAPP_TECH_SUPPORT_EMAIL: 'technical@{{ mail_domain }}'
+EDXAPP_CONTACT_EMAIL: 'info@{{ mail_domain }}'
+EDXAPP_BUGS_EMAIL: 'bugs@{{ mail_domain }}'
+EDXAPP_DEFAULT_FROM_EMAIL: 'registration@{{ mail_domain }}'
+EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'feedback@{{ mail_domain }}'
+EDXAPP_DEFAULT_SERVER_EMAIL: 'devops@{{ mail_domain }}'
+EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@{{ mail_domain }}'
 
 EDXAPP_ENV_EXTRA: {}
 EDXAPP_AUTH_EXTRA: {}

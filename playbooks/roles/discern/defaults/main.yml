@@ -44,7 +44,7 @@ discern_worker_mult: 2
 discern_env_config:
   ACCOUNT_EMAIL_VERIFICATION: "mandatory"
   AWS_SES_REGION_NAME: "us-east-1"
-  DEFAULT_FROM_EMAIL: "registration@example.com"
+  DEFAULT_FROM_EMAIL: "registration@{{ mail_domain }}"
   DNS_HOSTNAME: ""
   ELB_HOSTNAME: ""
   EMAIL_BACKEND: "django.core.mail.backends.smtp.EmailBackend"

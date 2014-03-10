@@ -11,7 +11,7 @@ env_keys: []
 # 'adm' and 'edx' system groups
 admin_users:
 - user: joe
-  email: joe@example.com
+  email: "joe@{{ mail_domain }}"
   groups:
   # But at least one group must be defined
   - adm 

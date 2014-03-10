@@ -22,7 +22,7 @@
 
 - name: create staff user
   shell: >
-    {{ edxapp_venv_bin }}/python ./manage.py lms --settings=aws --service-variant lms create_user -e staff@example.com -p edx -s -c {{ demo_course_id }}
+    {{ edxapp_venv_bin }}/python ./manage.py lms --settings=aws --service-variant lms create_user -e staff@{{ mail_domain }} -p edx -s -c {{ demo_course_id }}
     chdir={{ edxapp_code_dir }}
   sudo_user: "{{ common_web_user }}"
   when: demo_checkout.changed

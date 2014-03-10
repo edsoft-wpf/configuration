@@ -17,12 +17,12 @@ demo_repo: "https://{{ COMMON_GIT_MIRROR }}/edx/edx-demo-course.git"
 demo_course_id: 'edX/Open_DemoX/edx_demo_course'
 demo_version: "master"
 demo_test_users:
-  - email: 'honor@example.com'
+  - email: 'honor@{{ mail_domain }}'
     mode: honor
     password: edx
-  - email: 'audit@example.com'
+  - email: 'audit@{{ mail_domain }}'
     mode: audit
     password: edx
-  - email: 'verified@example.com'
+  - email: 'verified@{{ mail_domain }}'
     mode: verified
     password: edx

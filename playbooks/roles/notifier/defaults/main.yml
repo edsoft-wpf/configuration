@@ -14,7 +14,7 @@ NOTIFIER_LOG_LEVEL: "INFO"
 NOTIFIER_RSYSLOG_ENABLED: "yes"
 NOTIFIER_DIGEST_TASK_INTERVAL: "1440"
 
-NOTIFIER_DIGEST_EMAIL_SENDER: "notifications@example.com"
+NOTIFIER_DIGEST_EMAIL_SENDER: "notifications@{{ mail_domain }}"
 NOTIFIER_DIGEST_EMAIL_SUBJECT: "Daily Discussion Digest"
 NOTIFIER_DIGEST_EMAIL_TITLE: "Discussion Digest"
 NOTIFIER_DIGEST_EMAIL_DESCRIPTION: "A digest of unread content from course discussions you are following."
