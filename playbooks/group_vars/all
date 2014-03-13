@@ -24,4 +24,4 @@ lms_domain: course.shtvu.edu.cn
 cms_domain: studio.shtvu.edu.cn
 
 # this indicates the site domain name for mail suffix
-mail_domain: {{ lms_domain }}
+mail_domain: “{{ lms_domain }}”
